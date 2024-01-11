@@ -31,9 +31,9 @@
     "typescript": "^5.3.3"
   },
   "devDependencies": {
-    "sst": "^2.39.2",
+    "astro-sst": "^2.39.2",
     "aws-cdk-lib": "2.110.1",
     "constructs": "10.3.0",
-    "astro-sst": "^2.39.2"
+    "sst": "^2.39.2"
   }
 }
