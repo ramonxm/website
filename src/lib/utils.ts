@@ -1,5 +1,5 @@
-import { type ClassValue, clsx } from ".vscode/node_modules/clsx/clsx.d.mts";
-import { twMerge } from ".vscode/node_modules/tailwind-merge/dist/types";
+import { type ClassValue, clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));

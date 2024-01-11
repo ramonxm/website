@@ -1,0 +1,56 @@
+---
+import { NavigationMenuRoot } from "@/components/ui/navigation";
+import Layout from "../../layouts/Layout.astro";
+import { Image } from "astro:assets";
+---
+
+<Layout title="Ramon Xavier">
+  <header
+    class="mx-auto flex max-w-5xl items-center justify-between gap-20 px-5 py-8 xl:px-0 flex-row-reverse lg:flex-row"
+  >
+    <Image
+      alt="Logo"
+      width="232"
+      height="50"
+      loading="lazy"
+      decoding="async"
+      src="/images/logo_name.png"
+    />
+    <NavigationMenuRoot client:idle />
+  </header>
+  <div
+    data-orientation="horizontal"
+    role="none"
+    class="shrink-0 bg-border h-[1px] w-full"
+  >
+  </div>
+  <main
+    class="mx-auto max-w-5xl flex-col items-center justify-center px-5 py-8 xl:px-0 dark:bg-background"
+  >
+    <div
+      class="mx-auto flex max-w-5xl justify-center gap-2 px-5 py-8 xl:px-0 flex-row-reverse lg:flex-col"
+    >
+      <h1
+        class="animate-text bg-gradient-to-r from-teal-500 via-purple-500 to-orange-500 bg-clip-text text-transparent scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl"
+      >
+        Sobre mim
+      </h1>
+      <div class="flex gap-3">
+        <Image
+          alt="Minha Imagem"
+          loading="lazy"
+          decoding="async"
+          width="500"
+          height="500"
+          src="/images/profile.jpeg"
+        />
+        <p class="text-sm">
+          Full Stack Developer, based on React, React Native, Typescript and
+          Node. I'm passionate about the entire programming ecosystem.
+        </p>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style></style>
