@@ -28,32 +28,26 @@ import { Image } from "astro:assets";
     class="mx-auto max-w-5xl flex-col items-center justify-center px-5 py-8 xl:px-0 dark:bg-background"
   >
     <div
-      class="mx-auto flex items-start max-w-5xl justify-center gap-2 px-5 py-8 xl:px-0 flex-row-reverse lg:flex-col"
+      class="mx-auto flex max-w-5xl justify-center gap-2 px-5 py-8 xl:px-0 flex-row-reverse lg:flex-col"
     >
       <h1
-        class="animate-text bg-gradient-to-r mb-5 from-teal-500 via-purple-500 to-orange-500 bg-clip-text text-transparent scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl"
+        class="animate-text bg-gradient-to-r from-teal-500 via-purple-500 to-orange-500 bg-clip-text text-transparent scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl"
       >
-        Sobre mim
+        Videos
       </h1>
-      <div class="flex items-center gap-8">
-        <Image
-          alt="Minha Imagem"
-          loading="lazy"
-          decoding="async"
-          width="240"
-          height="240"
-          src="/images/profile.jpeg"
-          class="rounded-full"
-        />
-        <p class="text-lg">
-          Full Stack Developer, based on React, React Native, Typescript and
-          Node.
-          <br />
-          I'm passionate about the entire programming ecosystem.
-        </p>
+      <div class="grid auto-rows-[192px] grid-cols-3 gap-4">
+        {
+          [...Array(7)].map((_, i) => (
+            <div
+              class={`row-span-1 rounded-xl border-2 border-slate-400/10 bg-neutral-100 p-4 dark:bg-neutral-900 animate-pulse  ${
+                i === 3 || i === 6 ? "col-span-2" : ""
+              }`}
+            />
+          ))
+        }
       </div>
     </div>
   </main>
-</Layout>
 
-<style></style>
+  <style></style>
+</Layout>

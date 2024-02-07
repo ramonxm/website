@@ -26,12 +26,23 @@ export function NavigationMenuRoot() {
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-            <a href="/articles">Artigos</a>
+            <a href="/articles" title="Artigos">
+              Artigos
+            </a>
           </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-            <a href="/contact">Contato</a>
+            <a href="/videos" title="Videos">
+              Videos
+            </a>
+          </NavigationMenuLink>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+            <a href="/contact" title="Contato">
+              Contato
+            </a>
           </NavigationMenuLink>
         </NavigationMenuItem>
       </NavigationMenuList>
