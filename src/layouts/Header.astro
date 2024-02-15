@@ -1,0 +1,20 @@
+---
+import { NavigationMenuRoot } from "@/components/ui/navigation";
+import { Image } from "astro:assets";
+---
+
+<header
+  class="mx-auto flex max-w-5xl items-center justify-between gap-20 px-5 py-8 xl:px-0 flex-row-reverse lg:flex-row"
+>
+  <a href="/">
+    <Image
+      alt="Logo"
+      width="232"
+      height="50"
+      loading="eager"
+      decoding="async"
+      src="/images/logo_name.png"
+    />
+  </a>
+  <NavigationMenuRoot client:idle />
+</header>

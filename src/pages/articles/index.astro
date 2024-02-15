@@ -1,23 +1,10 @@
 ---
-import { NavigationMenuRoot } from "@/components/ui/navigation";
 import Layout from "../../layouts/Layout.astro";
-import { Image } from "astro:assets";
+import Header from "../../layouts/Header.astro";
 ---
 
 <Layout title="Ramon Xavier">
-  <header
-    class="mx-auto flex max-w-5xl items-center justify-between gap-20 px-5 py-8 xl:px-0 flex-row-reverse lg:flex-row"
-  >
-    <Image
-      alt="Logo"
-      width="232"
-      height="50"
-      loading="lazy"
-      decoding="async"
-      src="/images/logo_name.png"
-    />
-    <NavigationMenuRoot client:idle />
-  </header>
+  <Header />
   <div
     data-orientation="horizontal"
     role="none"
