@@ -1,11 +1,13 @@
 {
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit"
+    "source.fixAll": "always",
+    "source.fixAll.eslint": "always",
+    "source.addMissingImports": "always"
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "prettier.endOfLine": "auto",
-  "[astro]": {
-    "editor.defaultFormatter": "astro-build.astro-vscode"
+  "[kotlin]": {
+    "editor.defaultFormatter": "fwcd.kotlin"
   }
 }
