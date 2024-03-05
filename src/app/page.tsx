@@ -5,7 +5,7 @@ import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 export default function Home() {
   return (
     <div className="h-screen">
-      <section className="dark:bg-background relative overflow-hidden h-4/6	items-center flex mx-auto max-w-5xl">
+      <section className="dark:bg-background relative overflow-hidden h-2/6	items-center flex mx-auto max-w-5xl">
         <Background />
         <div className="flex-col items-center justify-center">
           <Title>Software Engineer</Title>

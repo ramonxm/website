@@ -8,7 +8,10 @@ export const Navbar = ({ className }: { className?: string }) => {
 
   return (
     <div
-      className={cn("flex justify-center items-center space-x-4", className)}
+      className={cn(
+        "flex justify-center z-10 items-center space-x-4",
+        className
+      )}
     >
       <Menu setActive={setActive}>
         <MenuItem setActive={setActive} active={active} item="About">
