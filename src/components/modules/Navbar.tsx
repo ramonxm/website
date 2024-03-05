@@ -9,7 +9,7 @@ export const Navbar = ({ className }: { className?: string }) => {
   return (
     <div
       className={cn(
-        "flex justify-center z-10 items-center space-x-4",
+        "flex justify-center z-10 items-center p-3 space-x-4",
         className
       )}
     >
@@ -23,7 +23,7 @@ export const Navbar = ({ className }: { className?: string }) => {
         </MenuItem>
       </Menu>
       <HoveredLink href="/articles">Articles</HoveredLink>
-      <HoveredLink href="/videos">Videos</HoveredLink>
+      <HoveredLink href="/links">Links</HoveredLink>
     </div>
   );
 };

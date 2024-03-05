@@ -3,9 +3,9 @@ import Image from "next/image";
 
 export default function WhoAmI() {
   return (
-    <div className="mx-auto max-w-5xl flex-col items-center justify-center dark:bg-background mt-8">
+    <div className="mx-auto max-w-5xl md:flex-col items-center justify-center dark:bg-background mt-8">
       <Title>Who Am I</Title>
-      <div className="flex gap-6 items-center">
+      <div className="flex flex-col md:flex-row gap-6 md:items-center mt-8">
         <Image
           width={250}
           height={250}
