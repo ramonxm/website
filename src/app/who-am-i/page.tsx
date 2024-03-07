@@ -7,11 +7,11 @@ export default function WhoAmI() {
       <Title>Who Am I</Title>
       <div className="flex flex-col md:flex-row gap-6 md:items-center mt-8">
         <Image
-          width={250}
-          height={250}
-          className="max-w-full h-auto border-none rounded-full shadow-lg align-middle"
+          width={298}
+          height={398}
+          className="max-w-full h-auto border-none rounded-[50%] shadow-lg align-middle"
           alt="Profile"
-          src="/images/profile.jpeg"
+          src="/images/profile.jpg"
         />
         <p className="leading-7 [&:not(:first-child)]:mt-6 text-justify">
           I have been a technology enthusiast since childhood, always curious
