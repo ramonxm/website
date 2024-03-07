@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/modules/Header";
 import { Footer } from "@/components/modules/Footer";
+import { headers } from "next/headers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,19 +17,25 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const headersList = headers();
+  const pathname = headersList.get("x-invoke-path") || "";
+  const specificRoute = "/links";
+
+  console.log(headersList);
+
   return (
     <html lang="en" className="dark">
       <body className={inter.className}>
+        {pathname !== specificRoute && <Header />}
         <main className="w-full h-screen">
-          <Header />
           <div
             role="none"
             data-orientation="horizontal"
             className="shrink-0 bg-border h-[1px] w-full"
           />
           {children}
-          <Footer />
         </main>
+        <Footer />
       </body>
     </html>
   );
