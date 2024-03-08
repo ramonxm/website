@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className={inter.className}>
-        <Header />
+        {/* <Header /> */}
         <main className="w-full min-h-screen">
           <div
             role="none"
@@ -28,7 +28,7 @@ export default function RootLayout({
           />
           {children}
         </main>
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );

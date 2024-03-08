@@ -7,6 +7,12 @@ import {
   IconBrandX,
   IconBrandYoutube,
 } from "@tabler/icons-react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Ramon Xavier | Links",
+  description: "Meus links de rede sociais e etc.",
+};
 
 export default function Links() {
   return (
