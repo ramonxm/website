@@ -20,15 +20,15 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <body className={inter.className}>
         <Header />
-        <main className="w-full h-screen">
+        <main className="w-full min-h-screen">
           <div
             role="none"
             data-orientation="horizontal"
             className="shrink-0 bg-border h-[1px] w-full"
           />
-          <section className="w-full h-full">{children}</section>
-          <Footer />
+          {children}
         </main>
+        <Footer />
       </body>
     </html>
   );
