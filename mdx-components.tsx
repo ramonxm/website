@@ -1,10 +1,10 @@
-import { SyntaxHighlight } from "@/components/modules/SyntaxHighlight";
-import type { MDXComponents } from "mdx/types";
+import { MDXComponents } from "mdx/types";
+import Image, { type ImageProps } from "next/image";
 
-export function useMDXComponents(components: MDXComponents): MDXComponents {
+export function useMDXComponents(components: MDXComponents) {
   return {
     ...components,
-    //@ts-ignore
-    code: SyntaxHighlight,
+    // eslint-disable-next-line jsx-a11y/alt-text
+    Image: (props: ImageProps) => <Image {...props} />,
   };
 }

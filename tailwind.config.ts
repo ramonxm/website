@@ -1,4 +1,6 @@
 import type { Config } from "tailwindcss";
+import typographyStyles from "./typography";
+import typographyPlugin from "@tailwindcss/typography";
 
 const config = {
   darkMode: ["class"],
@@ -17,6 +19,7 @@ const config = {
         "2xl": "1400px",
       },
     },
+    typography: typographyStyles,
     extend: {
       colors: {
         border: "hsl(var(--border))",
@@ -85,7 +88,7 @@ const config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), typographyPlugin],
 } satisfies Config;
 
 export default config;

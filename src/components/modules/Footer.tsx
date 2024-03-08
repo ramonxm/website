@@ -9,8 +9,8 @@ import {
 
 export const Footer = () => {
   return (
-    <>
-      <footer className="mx-auto flex max-w-5xl flex-col justify-start gap-4 overflow-hidden py-8 px-5 lg:px-0">
+    <footer>
+      <div className="mx-auto flex max-w-5xl flex-col justify-start gap-4 overflow-hidden py-8 px-5 lg:px-0  mt-auto">
         <div className="rounded-xl border text-card-foreground shadow bg-[#121212]">
           <div className="items-center m-0 flex justify-center p-5">
             <div className="grid grid-cols-5 items-center gap-3 md:flex md:gap-2">
@@ -91,8 +91,8 @@ export const Footer = () => {
             </div>
           </div>
         </div>
-      </footer>
-      <footer className="text-white bg-[#121212]  p-4 md:flex md:items-center md:justify-between md:p-6 ">
+      </div>
+      <div className="text-white bg-[#121212]  p-4 md:flex md:items-center md:justify-between md:p-6 ">
         <span className="text-sm sm:text-center text-white ">
           © 2024
           <a
@@ -125,7 +125,7 @@ export const Footer = () => {
             </a>
           </li>
         </ul>
-      </footer>
-    </>
+      </div>
+    </footer>
   );
 };

@@ -4,12 +4,12 @@ import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 
 export default function Home() {
   return (
-    <section className="dark:bg-background relative overflow-hidden h-2/6	items-center flex mx-auto max-w-5xl">
-      <Background />
-      <div className="flex-col items-center justify-center">
+    <div className="mt-9 dark:bg-background overflow-hidden mx-auto max-w-5xl">
+      <div className="flex flex-col items-center justify-center">
+        <Background />
         <Title>Software Engineer</Title>
         <TextGenerateEffect words="Full Stack Developer, based on React, React Native, Typescript and Node. I'm passionate about the entire programming ecosystem." />
       </div>
-    </section>
+    </div>
   );
 }
