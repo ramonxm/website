@@ -11,7 +11,7 @@ type Item = {
 };
 
 type CardsProps = {
-  items: Item[];
+  items: any[];
 };
 
 export const Cards = ({ items }: CardsProps) => {
