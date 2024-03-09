@@ -9,9 +9,11 @@ export default function WhoAmI() {
         <Image
           width={298}
           height={398}
-          className="max-w-full h-auto border-none rounded-[50%] shadow-lg align-middle"
           alt="Profile"
           src="/images/profile.jpg"
+          priority
+          loading="eager"
+          className="border-none rounded-full shadow-lg align-middle"
         />
         <p className="leading-7 [&:not(:first-child)]:mt-6 text-justify">
           I have been a technology enthusiast since childhood, always curious
