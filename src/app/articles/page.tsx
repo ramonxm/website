@@ -7,13 +7,11 @@ export default async function Articles() {
   const articles = await getAllArticles();
 
   return (
-    <Layout>
-      <div className="mx-auto max-w-5xl flex-col items-center justify-center dark:bg-background mt-8">
-        <Title>Articles</Title>
-        <div className="flex flex-col mt-6 gap-6">
-          <Cards items={articles} />
-        </div>
+    <div className="mx-auto max-w-5xl flex-col items-center justify-center dark:bg-background mt-8">
+      <Title>Articles</Title>
+      <div className="flex flex-col mt-6 gap-6">
+        <Cards items={articles} />
       </div>
-    </Layout>
+    </div>
   );
 }

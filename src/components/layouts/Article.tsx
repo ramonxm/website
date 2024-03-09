@@ -26,7 +26,7 @@ export function Prose({
 }
 
 export const formatDate = (dateString: string) => {
-  return new Date(`${dateString}T00:00:00Z`).toLocaleDateString("en-US", {
+  return new Date(`${dateString}T00:00:00Z`).toLocaleDateString("pt-BR", {
     month: "long",
     day: "numeric",
     year: "numeric",
@@ -59,17 +59,17 @@ const Article = ({
 
   return (
     <div className="mx-auto max-w-5xl flex-col items-center justify-center dark:bg-background mt-8">
+      {previousPathname && (
+        <button
+          type="button"
+          onClick={() => router.back()}
+          aria-label="Go back to articles"
+          className="group mb-2 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 transition dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0 dark:ring-white/10 dark:hover:border-zinc-700 dark:hover:ring-white/20"
+        >
+          <ArrowLeftIcon className="h-4 w-4 stroke-zinc-500 transition group-hover:stroke-zinc-700 dark:stroke-zinc-500 dark:group-hover:stroke-zinc-400" />
+        </button>
+      )}
       <article>
-        {previousPathname && (
-          <button
-            type="button"
-            onClick={() => router.back()}
-            aria-label="Go back to articles"
-            className="group mb-2 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 transition dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0 dark:ring-white/10 dark:hover:border-zinc-700 dark:hover:ring-white/20"
-          >
-            <ArrowLeftIcon className="h-4 w-4 stroke-zinc-500 transition group-hover:stroke-zinc-700 dark:stroke-zinc-500 dark:group-hover:stroke-zinc-400" />
-          </button>
-        )}
         <header className="flex flex-col">
           <h1 className="mt-6 text-4xl font-bold tracking-tight sm:text-5xl text-black dark:text-zinc-100">
             {article.title}

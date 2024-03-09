@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss";
 import typographyStyles from "./typography";
+
 import typographyPlugin from "@tailwindcss/typography";
 
 const config = {
