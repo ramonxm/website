@@ -23,7 +23,6 @@ export const Navbar = ({ className }: { className?: string }) => {
         </MenuItem>
       </Menu>
       <HoveredLink href="/articles">Articles</HoveredLink>
-      <HoveredLink href="/links">Links</HoveredLink>
     </div>
   );
 };
