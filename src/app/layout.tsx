@@ -23,7 +23,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className="dark">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        {children}
+      </body>
     </html>
   );
 }
