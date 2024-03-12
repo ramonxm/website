@@ -1,0 +1,109 @@
+import ArticleLayout from "@/components/layouts/Article";
+
+export const article = {
+  author: "Ramon Xavier",
+  date: "2024-03-07",
+  title: "Publicando um pacote NPM no Gitlab Package Registry",
+  description:
+    "Neste post, vamos explorar como publicar um pacote no NPM usando o GitLab Package Registry, dentro de um repositório privado. Para começar, você precisará ter instalado as últimas versões do Node e do gerenciador de pacotes npm ou yarn, além de possuir uma conta no GitLab e um editor de texto de sua preferência, como o VSCode.",
+};
+export const metadata = {
+  title: article.title,
+  description: article.description,
+};
+
+export default (props) => <ArticleLayout article={article} {...props} />;
+
+Neste post, vamos explorar como publicar um pacote no NPM usando o GitLab Package Registry, dentro de um repositório privado. Para começar, você precisará ter instalado as últimas versões do Node e do gerenciador de pacotes npm ou yarn, além de possuir uma conta no GitLab e um editor de texto de sua preferência, como o VSCode.
+
+```md
+Pré-requisitos: node e (npm ou yarn) nas últimas versões.
+Conta Gitlab
+VSCode ou editor de texto da sua preferência
+```
+
+## Inicializando o Projeto
+
+Para gerenciar um Monorepo e os Workspaces do Yarn, vamos usar o Lerna. Para iniciar o projeto, siga as etapas abaixo:
+
+```shell
+$ mkdir my-project
+$ cd my-project
+$ npx lerna init
+```
+
+Para adicionar as configurações necessárias no arquivo lerna.json, você deve incluir o seguinte bloco de código:
+
+```json
+// Em ./lerna.json
+{
+  "packages": ["packages/*"],
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "version": "independent"
+  "command": {
+    "publish": {
+      "registry": "https://gitlab.com/api/v4/projects/<your-project-id>/packages/npm/"
+    }
+  }
+}
+```
+
+Para capturar o Project-ID, você deve acessar as configurações do seu repositório no GitLab e verificar o valor que aparece na URL. O Project-ID é o número que aparece após a barra em `https://gitlab.com/<seu_usuario>/<seu_repositorio>/edit`, por exemplo:
+`https://gitlab.com/meu_usuario/meu_repositorio/edit -> Project-ID: 123456`
+
+Para criar um projeto dentro do repositório, você pode usar o seguinte comando:
+
+```shell
+$ cd packages
+$ mkdir my-lib
+```
+
+Dentro desse repositório, você pode criar um projeto NPM usando os comandos npm init, yarn init ou pnpm init.
+Depois de criar seu projeto, abra o arquivo package.json e adicione as seguintes configurações:
+
+```json
+"publishConfig": {
+    "@my-project:registry": "https://gitlab.com/api/v4/projects/<your-project-id>/packages/npm/"
+  },
+"sideEffects": false,
+```
+
+Retornando ao GitLab Package Registry, após ter criado o seu projeto, vamos agora ver como publicá-lo no NPM dentro de um repositório privado. Para fazer isso, é necessário retornar à raiz do projeto e criar um arquivo chamado .npmrc.
+Esse arquivo é importante porque contém as informações de configuração necessárias para publicar um pacote no NPM, incluindo as credenciais de acesso ao GitLab Package Registry. Para criá-lo, basta executar o comando touch .npmrc no terminal, enquanto estiver na raiz do seu projeto.
+Em seguida, adicione as seguintes linhas ao arquivo .npmrc:
+
+```shell
+// dentro do .nmprc
+@my-project:registry=https://gitlab.com/api/v4/packages/npm/
+//gitlab.com/api/v4/packages/npm/:_authToken=<token_de_autenticação>
+//gitlab.com/api/v4/projects/<id_do_projeto>/packages/npm/:<token_de_autenticação>
+```
+
+`Substitua <id_do_projeto> pelo ID do seu projeto no GitLab e <token_de_autenticação> pelo token de acesso que você gerou anteriormente. Lembre-se de que esse token é sensível e não deve ser compartilhado publicamente.`
+
+## Criando nosso AUTH TOKEN:
+
+Para começar, acesse as configurações do seu repositório no GitLab clicando na opção "Settings":
+Settings no final.Para criar um token de acesso, vá para as configurações do seu projeto no GitLab e acesse a seção "Access Tokens".
+
+Ao criar seu token de acesso, é importante definir os atributos corretos para garantir a segurança do seu projeto. Algumas das informações que você deve definir incluem:
+Após criar o seu access token, você poderá voltar ao seu projeto local e publicá-lo no GitLab Package Registry usando o seguinte comando:
+
+```shell
+AUTH_TOKEN_GITLAB=<valor do seu token> yarn build && lerna publish --yes
+```
+
+Se tudo deu certo, ao seguir os passos descritos, você conseguirá visualizar seu projeto publicado na aba Package Registry. Isso significa que sua biblioteca está disponível para uso por outros desenvolvedores que tenham acesso ao repositório GitLab. Lembre-se de que, para garantir a segurança do seu projeto e dos seus usuários, é importante seguir as boas práticas de segurança ao configurar as permissões de acesso e compartilhar credenciais. Dessa forma, você poderá contribuir para um ecossistema de desenvolvimento mais seguro e confiável.
+
+Agora, para adicionar a sua biblioteca em um projeto, você precisará criar um arquivo .npmrc no diretório raiz do projeto e adicionar as variáveis da sua biblioteca.
+
+```shell
+// dentro de .npmrc
+@my-project:registry=https://gitlab.com/api/v4/projects/<project-id>/packages/npm/
+//gitlab.com/api/v4/projects/36997980/packages/npm/:_authToken=AUTH_TOKEN_GITLAB
+// por fim, adicionar seu pacote no seu projeto.
+$ yarn add @my-project/my-lib or npm install @my-project/my-lib
+```
+
+Agradeço pela leitura e espero ter sido útil! Se você tiver alguma dúvida ou sugestão, por favor, sinta-se à vontade para deixar um comentário abaixo. Estamos sempre à disposição para ajudá-lo a melhorar sua experiência de desenvolvimento. Até a próxima!

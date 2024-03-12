@@ -1,3 +1,4 @@
+import { MotionSvgScroll } from "@/assets/svgs/MotionSvg";
 import { Layout } from "@/components/layouts/Layout";
 import { Background } from "@/components/modules/Background";
 import { Title } from "@/components/modules/Title";
@@ -11,6 +12,9 @@ export default function Home() {
           <Background />
           <Title>Software Engineer</Title>
           <TextGenerateEffect words="Full Stack Developer, based on React, React Native, Typescript and Node. I'm passionate about the entire programming ecosystem." />
+          <div className="p-4">
+            <MotionSvgScroll />
+          </div>
         </div>
       </div>
     </Layout>
