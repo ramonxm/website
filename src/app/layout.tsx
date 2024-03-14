@@ -6,14 +6,23 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Ramon Xavier",
+  applicationName: "Ramon Xavier",
+  referrer: "origin-when-cross-origin",
+  keywords: ["Ramon", "Ramon Xavier", "Ramon Dev"],
+  authors: [{ name: "Ramon Xavier" }],
+  creator: "Ramon Xavier",
+  publisher: "Ramon Xavier",
   openGraph: {
     title: "Ramon Xavier",
+    url: "https://ramonxavier.com",
     siteName: "Ramon Xavier",
     locale: "pt-BR",
     type: "website",
-    description: "Site de um desenvolvedor apaixonado por programação.",
+    description:
+      "Desenvolvedor apaixonado por tecnologia e aos prazeres da vida.",
   },
-  description: "Site de um desenvolvedor apaixonado por programação.",
+  description:
+    "Desenvolvedor apaixonado por tecnologia e aos prazeres da vida.",
 };
 
 export default function RootLayout({
