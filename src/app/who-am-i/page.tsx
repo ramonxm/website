@@ -15,7 +15,7 @@ export default function WhoAmI() {
             alt="Profile"
             loading="eager"
             src="/images/profile.jpg"
-            className="border-none shadow-lg align-middle"
+            className="border-none shadow-lg align-middle rounded-sm"
           />
           <p className="leading-7 [&:not(:first-child)]:mt-6 text-justify">
             Experienced Mobile and Web Developer specializing in React Native,
