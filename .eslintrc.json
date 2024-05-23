@@ -1,3 +1,7 @@
 {
-  "extends": ["next/core-web-vitals", "plugin:import/recommended"]
+  "extends": ["next/core-web-vitals", "plugin:import/recommended"],
+  "rules": {
+    // TODO: Reenable when we figure out why it gets stuck on CI.
+    // 'react-compiler/react-compiler': 'error',
+  }
 }
