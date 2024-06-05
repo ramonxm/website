@@ -4,6 +4,11 @@ import remarkGfm from "remark-gfm";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  experimental: {
+    reactCompiler: {
+      compilationMode: "annotation",
+    },
+  },
   pageExtensions: ["js", "jsx", "ts", "tsx", "mdx"],
 };
 
