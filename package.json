@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "@types/mdx": "^2.0.13",
-    "@types/node": "^20.14.1",
+    "@types/node": "^20.14.2",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@types/three": "^0.165.0",
@@ -42,7 +42,7 @@
     "eslint-config-next": "14.2.3",
     "eslint-plugin-import": "^2.29.1",
     "postcss": "^8.4.38",
-    "tailwindcss": "^3.4.3",
+    "tailwindcss": "^3.4.4",
     "typescript": "^5.4.5"
   }
 }
