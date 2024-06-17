@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { HeroHighlight, Highlight } from "../ui/hero-highlight";
-import { MotionSvgScroll } from "@/assets/svgs/MotionSvg";
+// import { MotionSvgScroll } from "@/assets/svgs/MotionSvg";
 import { Title } from "./Title";
 import { TextGenerateEffect } from "../ui/text-generate-effect";
 
@@ -30,7 +30,7 @@ export function ContentDescription() {
         </Title>
         <TextGenerateEffect words="Full Stack Developer, based on React, React Native, Typescript and Node. I'm passionate about the entire programming ecosystem." />
         <div className="p-4 flex justify-center">
-          <MotionSvgScroll />
+          {/* <MotionSvgScroll /> */}
         </div>
       </motion.h1>
     </HeroHighlight>
