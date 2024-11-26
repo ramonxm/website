@@ -1,24 +1,18 @@
 import type { Config } from "tailwindcss";
 
-const config = {
-  darkMode: ["class"],
+export default {
   content: [
-    "./pages/**/*.{ts,tsx,mdx}",
-    "./components/**/*.{ts,tsx,mdx}",
-    "./app/**/*.{ts,tsx,mdx}",
-    "./src/**/*.{ts,tsx,mdx}",
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  prefix: "",
   theme: {
-    container: {
-      center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
+    extend: {
+      colors: {
+        background: "var(--background)",
+        foreground: "var(--foreground)",
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [],
 } satisfies Config;
-
-export default config;
