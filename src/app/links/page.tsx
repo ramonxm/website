@@ -5,11 +5,8 @@ import {
   InstagramIcon,
   LucideTwitter,
   YoutubeIcon,
-  ArrowUpLeft,
-  ArrowLeft,
 } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 
 export default function Page() {
   return (
