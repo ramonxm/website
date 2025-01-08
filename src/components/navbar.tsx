@@ -31,13 +31,13 @@ export function Navbar() {
           </Link>
           <nav className="flex items-center space-x-6 text-sm font-medium">
             <Link
-              href="#about"
+              href="/about"
               className="transition-colors hover:text-foreground/80"
             >
               About
             </Link>
             <Link
-              href="#projects"
+              href="/projects"
               className="transition-colors hover:text-foreground/80"
             >
               Projects
