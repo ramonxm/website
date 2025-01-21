@@ -6,20 +6,10 @@ import {
   LucideTwitter,
   YoutubeIcon,
 } from "lucide-react";
-import Image from "next/image";
 
 export default function Page() {
   return (
     <div className="mx-auto max-w-prose flex flex-col gap-4 px-6 py-8">
-      <div className="flex items-center justify-center mb-4">
-        <Image
-          priority
-          width={120}
-          height={26}
-          src="/images/logo.png"
-          alt="Ramon Xavier Logo"
-        />
-      </div>
       <section className="flex flex-col gap-4">
         <a
           target="_blank"

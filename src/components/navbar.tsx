@@ -18,11 +18,7 @@ export function Navbar() {
         <div className="mr-4 hidden md:flex">
           <Link href="/" className="mr-6 flex items-center space-x-2">
             <Image
-              src={
-                theme === "dark"
-                  ? "/images/logo_name.png"
-                  : "/images/logo_name-light.png"
-              }
+              src="/images/logo_name.png"
               alt="Ramon Logo"
               width={120}
               height={40}

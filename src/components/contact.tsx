@@ -18,7 +18,7 @@ export function ContactSection() {
         </h2>
         <Card className="w-full">
           <CardHeader>
-            <CardTitle>Contact Form</CardTitle>
+            <CardTitle>Contact</CardTitle>
             <CardDescription>
               Send me a message and I'll get back to you as soon as possible.
             </CardDescription>
@@ -40,7 +40,7 @@ export function ContactSection() {
                 <Textarea id="message" placeholder="Your message" />
               </div>
               <Button type="submit" className="w-full md:w-auto">
-                Send Message
+                Send
               </Button>
             </form>
           </CardContent>
