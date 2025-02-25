@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "#/components/navbar";
 import { ThemeProvider } from "next-themes";
 
 const inter = Inter({
@@ -45,7 +44,6 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <div className="relative w-full flex min-h-screen flex-col bg-background">
-            <Navbar />
             <main className="flex-1">{children}</main>
           </div>
         </ThemeProvider>
