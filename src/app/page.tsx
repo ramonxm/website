@@ -6,10 +6,10 @@ import Link from "next/link";
 
 export default function Home() {
   const menuItems = [
-    { title: "About Me", number: "01", path: "/about" },
-    { title: "Works", number: "02", path: "/works" },
-    { title: "Articles", number: "03", path: "/articles" },
-    { title: "Talks", number: "04", path: "/talks" },
+    { title: "About Me", path: "/about" },
+    { title: "Works", path: "/works" },
+    { title: "Articles", path: "/articles" },
+    { title: "Talks", path: "/talks" },
   ];
 
   return (
@@ -22,9 +22,6 @@ export default function Home() {
                 <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold transition-all group-hover:pl-2">
                   {item.title}
                 </h1>
-                <span className="text-sm sm:text-lg md:text-xl text-gray-500 ml-2">
-                  ({item.number})
-                </span>
               </div>
             </Link>
             <Link

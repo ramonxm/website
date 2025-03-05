@@ -31,10 +31,7 @@ export default function Talks() {
       </Link>
 
       <h1 className="text-5xl md:text-6xl font-medium tracking-tight mb-12 animate-fade-in">
-        Talks{" "}
-        <span className="text-muted-foreground font-mono text-base tracking-tighter ml-2">
-          (04)
-        </span>
+        Talks
       </h1>
 
       <div className="space-y-12 mt-12">

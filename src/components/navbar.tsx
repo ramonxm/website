@@ -29,7 +29,7 @@ export const Navbar = () => {
   return (
     <>
       <nav className="flex justify-between items-center border-b border-gray-800 py-4">
-        <div className="relative h-10 w-32 sm:w-48 md:w-60">
+        <Link href="/" className="relative h-10 w-32 sm:w-48 md:w-60">
           <Image
             src="/icon.svg"
             alt="Logo"
@@ -37,7 +37,7 @@ export const Navbar = () => {
             objectFit="contain"
             className="object-left"
           />
-        </div>
+        </Link>
 
         <div className="md:hidden">
           <button

@@ -29,10 +29,7 @@ export default function Works() {
       </Link>
 
       <h1 className="text-5xl md:text-6xl font-medium tracking-tight mb-12 animate-fade-in">
-        Works{" "}
-        <span className="text-muted-foreground font-mono text-base tracking-tighter ml-2">
-          (02)
-        </span>
+        Works
       </h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
