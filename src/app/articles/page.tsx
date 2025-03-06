@@ -17,16 +17,28 @@ export default function Articles() {
 
   return (
     <div className="pt-8 pb-20">
-      <Link
-        href="/"
-        className="inline-flex items-center text-muted-foreground hover:text-foreground transition-colors duration-300 mb-8 group"
-      >
-        <ArrowLeft
-          size={18}
-          className="mr-2 transition-transform duration-300 group-hover:-translate-x-1"
-        />
-        Home
-      </Link>
+      <div className="flex items-center justify-between">
+        <Link
+          href="/works"
+          className="inline-flex items-center text-muted-foreground hover:text-foreground transition-colors duration-300 mb-8 group"
+        >
+          <ArrowLeft
+            size={18}
+            className="mr-2 transition-transform duration-300 group-hover:-translate-x-1"
+          />
+          Works
+        </Link>
+        <Link
+          href="/talks"
+          className="inline-flex items-center text-muted-foreground hover:text-foreground transition-colors duration-300 mb-8 group"
+        >
+          Talks
+          <ArrowRight
+            size={18}
+            className="ml-2 transition-transform duration-300 group-hover:translate-x-1"
+          />
+        </Link>
+      </div>
 
       <h1 className="text-5xl md:text-6xl font-medium tracking-tight mb-12 animate-fade-in">
         Articles

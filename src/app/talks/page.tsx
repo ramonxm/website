@@ -20,14 +20,14 @@ export default function Talks() {
   return (
     <div className="pt-8 pb-20">
       <Link
-        href="/"
+        href="/articles"
         className="inline-flex items-center text-muted-foreground hover:text-foreground transition-colors duration-300 mb-8 group"
       >
         <ArrowLeft
           size={18}
           className="mr-2 transition-transform duration-300 group-hover:-translate-x-1"
         />
-        Home
+        Articles
       </Link>
 
       <h1 className="text-5xl md:text-6xl font-medium tracking-tight mb-12 animate-fade-in">

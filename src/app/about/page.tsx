@@ -1,21 +1,33 @@
 "use client";
 
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 export default function About() {
   return (
     <div className="pt-8 pb-20">
-      <Link
-        href="/"
-        className="inline-flex items-center text-muted-foreground hover:text-foreground transition-colors duration-300 mb-8 group"
-      >
-        <ArrowLeft
-          size={18}
-          className="mr-2 transition-transform duration-300 group-hover:-translate-x-1"
-        />
-        Home
-      </Link>
+      <div className="flex items-center justify-between">
+        <Link
+          href="/"
+          className="inline-flex items-center text-muted-foreground hover:text-foreground transition-colors duration-300 mb-8 group"
+        >
+          <ArrowLeft
+            size={18}
+            className="mr-2 transition-transform duration-300 group-hover:-translate-x-1"
+          />
+          Home
+        </Link>
+        <Link
+          href="/works"
+          className="inline-flex items-center text-muted-foreground hover:text-foreground transition-colors duration-300 mb-8 group"
+        >
+          Works
+          <ArrowRight
+            size={18}
+            className="ml-2 transition-transform duration-300 group-hover:translate-x-1"
+          />
+        </Link>
+      </div>
 
       <h1 className="text-5xl md:text-6xl font-medium tracking-tight mb-12 animate-fade-in">
         About Me
