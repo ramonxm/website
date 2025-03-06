@@ -80,17 +80,17 @@ export default function About() {
                   Storm Group • 2021 — 2022
                 </p>
                 <ul className="mt-2 list-disc list-inside space-y-2">
-                  <li>Reduction of the application's Bundle</li>
+                  <li>Personalized gift list</li>
+                  <li>Creation of shopping cart</li>
                   <li>Migration from Webpack to Vite</li>
+                  <li>Reduction of the application's Bundle</li>
                   <li>Migration of Material UI to the latest version</li>
                   <li>Migration of the Javascript codebase to Typescript</li>
+                  <li>Integration with Payment Gateway (Mercado Pago)</li>
+                  <li>Creation of personalized websites for invitations</li>
                   <li>
                     Implementation of unit and integration testing culture
                   </li>
-                  <li>Creation of personalized websites for invitations</li>
-                  <li>Personalized gift list</li>
-                  <li>Integration with Payment Gateway (Mercado Pago)</li>
-                  <li>Creation of shopping cart</li>
                 </ul>
               </div>
             </div>
