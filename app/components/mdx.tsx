@@ -1,8 +1,8 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { MDXRemote, MDXRemoteProps } from 'next-mdx-remote/rsc'
-import { highlight } from 'sugar-high'
 import React from 'react'
+import { CodeBlock } from '@/app/components/code-block'
 
 function Table({ data }) {
   let headers = data.headers.map((header, index) => (
@@ -48,9 +48,18 @@ function RoundedImage(props) {
   return <Image alt={props.alt} className="rounded-lg" {...props} />
 }
 
-function Code({ children, ...props }) {
-  let codeHTML = highlight(children)
-  return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />
+function Code({ children, className, ...props }) {
+  const language = className ? className.replace(/language-/, '') : 'jsx';
+  
+  return (
+    <CodeBlock 
+      language={language} 
+      code={String(children)}
+      filename={`Example.${language}`}
+      highlightLines={props.highlightLines || []}
+      {...props} 
+    />
+  );
 }
 
 function slugify(str: string) {
