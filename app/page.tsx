@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export default function Page() {
   return (
-    <section>
+    <section className="flex-1">
       <div className="w-full flex flex-col items-center mb-16 relative overflow-hidden">
         <div className="absolute top-0 right-0 -z-10 opacity-5 transform rotate-12">
           <Image
