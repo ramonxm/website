@@ -1,0 +1,151 @@
+---
+title: 'How to Publish an NPM Package to GitLab's Package Registry'
+publishedAt: '2024-04-08'
+summary: 'A step-by-step guide to publishing a package to NPM via GitLab's Package Registry in a private repository, using Node.js, npm/yarn, and Lerna.'
+---
+
+In this tutorial, I'll walk you through the process of publishing an NPM package using GitLab's Package Registry within a private repository. This approach allows you to manage private packages efficiently while leveraging GitLab's robust security features.
+
+## Prerequisites
+
+Before we begin, make sure you have:
+
+- Node.js (latest version)
+- Package manager (npm or yarn)
+- GitLab account with a private repository
+- A code editor (VSCode or similar)
+
+## 1. Setting Up a Monorepo with Lerna
+
+We'll use Lerna to manage a monorepo structure with Yarn workspaces. This provides a clean way to organize multiple packages.
+
+First, create and initialize your project:
+
+```bash
+mkdir my-project
+cd my-project
+npx lerna init
+```
+
+## 2. Configuring Lerna
+
+Now, let's configure Lerna by updating the `lerna.json` file:
+
+```json
+{
+  "packages": ["packages/*"],
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "version": "independent",
+  "command": {
+    "publish": {
+      "registry": "https://gitlab.com/api/v4/projects/<your-project-id>/packages/npm/"
+    }
+  }
+}
+```
+
+> **Finding Your Project ID**: Navigate to your GitLab repository settings. The Project ID is the number in the URL after the slash: `https://gitlab.com/<your_user>/<your_repository>/edit` → Project ID: 123456
+
+## 3. Creating Your Package
+
+Now, let's create a package within your monorepo:
+
+```bash
+cd packages
+mkdir my-lib
+cd my-lib
+yarn init # or npm init or pnpm init
+```
+
+After initializing the package, open its `package.json` file and add these important configurations:
+
+```json
+{
+  "name": "@my-project/my-lib",
+  "version": "0.1.0",
+  // ... other package.json properties
+  "publishConfig": {
+    "@my-project:registry": "https://gitlab.com/api/v4/projects/<your-project-id>/packages/npm/"
+  },
+  "sideEffects": false
+}
+```
+
+## 4. Setting Up NPM Configuration
+
+Return to the project root directory and create an `.npmrc` file to configure access to the GitLab Package Registry:
+
+```bash
+cd ../..  # Return to project root
+touch .npmrc
+```
+
+Add the following configuration to your `.npmrc` file:
+
+```
+@my-project:registry=https://gitlab.com/api/v4/packages/npm/
+//gitlab.com/api/v4/packages/npm/:_authToken=${AUTH_TOKEN_GITLAB}
+//gitlab.com/api/v4/projects/<project_id>/packages/npm/:_authToken=${AUTH_TOKEN_GITLAB}
+```
+
+## 5. Creating a GitLab Access Token
+
+To authenticate with GitLab's Package Registry, you need to create an access token:
+
+1. Go to your GitLab repository
+2. Navigate to **Settings > Access Tokens**
+3. Create a new token with these permissions:
+   - `api` (for API access)
+   - `read_registry` and `write_registry` (for Package Registry access)
+4. Give your token a descriptive name and set an expiration date
+5. Copy the generated token - you'll only see it once!
+
+## 6. Publishing Your Package
+
+With everything set up, you can now publish your package to GitLab's Package Registry:
+
+```bash
+# Set your authentication token as an environment variable
+export AUTH_TOKEN_GITLAB=<your_token_value>
+
+# Build and publish
+yarn build && lerna publish --yes
+```
+
+If successful, you'll see your package in the GitLab repository under the **Packages & Registries** tab.
+
+## 7. Using Your Published Package
+
+To use your published package in another project:
+
+1. Create an `.npmrc` file in the root of your consuming project:
+
+```
+@my-project:registry=https://gitlab.com/api/v4/projects/<project-id>/packages/npm/
+//gitlab.com/api/v4/projects/<project-id>/packages/npm/:_authToken=${AUTH_TOKEN_GITLAB}
+```
+
+2. Install your package:
+
+```bash
+yarn add @my-project/my-lib
+# or
+npm install @my-project/my-lib
+```
+
+## Security Best Practices
+
+- Never commit your `.npmrc` file with the actual token value
+- Use environment variables to inject your tokens
+- Consider adding `.npmrc` to your `.gitignore` file
+- Set appropriate token expiration dates
+- Use the minimum required permissions for your tokens
+
+## Troubleshooting Tips
+
+- **Authentication failures**: Check that your token has the correct permissions
+- **Package not found**: Verify project ID and package namespace match
+- **Publishing errors**: Ensure package version is updated before republishing
+
+Thank you for reading! I hope this guide helps you successfully publish your packages to GitLab's Package Registry. If you have any questions or suggestions, feel free to leave a comment below.
