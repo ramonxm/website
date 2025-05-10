@@ -1,8 +1,8 @@
-import Link from 'next/link'
-import { formatDate, getBlogPosts } from 'app/blog/utils'
+import Link from "next/link";
+import { formatDate, getBlogPosts } from "app/blog/utils";
 
 export async function BlogPosts() {
-  let allBlogs = await getBlogPosts()
+  let allBlogs = await getBlogPosts();
 
   return (
     <div>
@@ -11,9 +11,9 @@ export async function BlogPosts() {
           if (
             new Date(a.metadata.publishedAt) > new Date(b.metadata.publishedAt)
           ) {
-            return -1
+            return -1;
           }
-          return 1
+          return 1;
         })
         .map((post) => (
           <Link
@@ -32,5 +32,5 @@ export async function BlogPosts() {
           </Link>
         ))}
     </div>
-  )
+  );
 }

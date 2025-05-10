@@ -51,11 +51,7 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={cx(
-        'dark',
-        GeistSans.variable,
-        GeistMono.variable,
-      )}
+      className={cx("dark", GeistSans.variable, GeistMono.variable)}
     >
       <body>
         <div className="container bg-background mx-auto px-4 sm:px-6 py-4 max-w-6xl">

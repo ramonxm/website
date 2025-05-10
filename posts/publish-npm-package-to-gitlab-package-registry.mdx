@@ -29,7 +29,7 @@ npx lerna init
 
 ## 2. Configuring Lerna
 
-Now, let's configure Lerna by updating the *lerna.json* file:
+Now, let's configure Lerna by updating the _lerna.json_ file:
 
 ```json
 {
@@ -47,14 +47,13 @@ Now, let's configure Lerna by updating the *lerna.json* file:
 // Finding Your Project ID**: Navigate to your GitLab repository settings. The Project ID is the number in the URL after the slash:
 -> https://gitlab.com/<your_user>/<your_repository>/edit
 
-// Project ID: 
+// Project ID:
 -> 123456
 ```
 
 ## 3. Creating Your Package
 
 Now, let's create a package within your monorepo:
-
 
 ```bash
 cd packages
@@ -63,7 +62,7 @@ cd my-lib
 yarn init # or npm init or pnpm init
 ```
 
-After initializing the package, open its *package.json* file and add these important configurations:
+After initializing the package, open its _package.json_ file and add these important configurations:
 
 ```json
 {
@@ -79,14 +78,14 @@ After initializing the package, open its *package.json* file and add these impor
 
 ## 4. Setting Up NPM Configuration
 
-Return to the project root directory and create an *.npmrc* file to configure access to the GitLab Package Registry:
+Return to the project root directory and create an _.npmrc_ file to configure access to the GitLab Package Registry:
 
 ```bash
 cd ../..  # Return to project root
 touch .npmrc
 ```
 
-Add the following configuration to your *.npmrc* file:
+Add the following configuration to your _.npmrc_ file:
 
 ```bash
 @my-project:registry=https://gitlab.com/api/v4/packages/npm/
@@ -101,8 +100,8 @@ To authenticate with GitLab's Package Registry, you need to create an access tok
 1. Go to your GitLab repository
 2. Navigate to **Settings > Access Tokens**
 3. Create a new token with these permissions:
-   - *api* (for API access)
-   - *read_registry* and *write_registry* (for Package Registry access)
+   - _api_ (for API access)
+   - _read_registry_ and _write_registry_ (for Package Registry access)
 4. Give your token a descriptive name and set an expiration date
 5. Copy the generated token - you'll only see it once!
 
@@ -124,7 +123,7 @@ If successful, you'll see your package in the GitLab repository under the **Pack
 
 To use your published package in another project:
 
-1. Create an *.npmrc* file in the root of your consuming project:
+1. Create an _.npmrc_ file in the root of your consuming project:
 
 ```bash
 @my-project:registry=https://gitlab.com/api/v4/projects/<project-id>/packages/npm/
@@ -141,9 +140,9 @@ npm install @my-project/my-lib
 
 ## Security Best Practices
 
-- Never commit your *.npmrc* file with the actual token value
+- Never commit your _.npmrc_ file with the actual token value
 - Use environment variables to inject your tokens
-- Consider adding *.npmrc* to your *.gitignore* file
+- Consider adding _.npmrc_ to your _.gitignore_ file
 - Set appropriate token expiration dates
 - Use the minimum required permissions for your tokens
 

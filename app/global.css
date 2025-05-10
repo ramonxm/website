@@ -7,7 +7,7 @@
   /* Core Colors */
   --tw-black: #000000;
   --tw-white: #ffffff;
-  
+
   /* Color Palette - Using HSL to maintain consistent saturation and lightness across colors */
   /* Blues */
   --tw-blue-500: hsl(220, 92%, 58%); /* primary blue */
@@ -15,25 +15,25 @@
   --tw-blue-700: hsl(220, 70%, 40%); /* enhanced contrast blue */
   --tw-blue-800: hsl(220, 70%, 18%); /* deep blue */
   --tw-blue-900: hsl(220, 70%, 12%); /* navy */
-  --tw-blue-950: hsl(220, 70%, 5%);  /* dark blue */
-  
+  --tw-blue-950: hsl(220, 70%, 5%); /* dark blue */
+
   /* Grays - using slight blue tint for better harmony with the blue palette */
-  --tw-gray-50: hsl(210, 20%, 98%);  /* lightest gray */
+  --tw-gray-50: hsl(210, 20%, 98%); /* lightest gray */
   --tw-gray-100: hsl(210, 15%, 96%); /* very light gray */
   --tw-gray-200: hsl(210, 12%, 91%); /* light gray for borders */
   --tw-gray-300: hsl(210, 10%, 80%); /* medium-light gray */
-  --tw-gray-400: hsl(210, 9%, 65%);  /* medium gray */
-  --tw-gray-500: hsl(210, 8%, 50%);  /* medium gray */
+  --tw-gray-400: hsl(210, 9%, 65%); /* medium gray */
+  --tw-gray-500: hsl(210, 8%, 50%); /* medium gray */
   --tw-gray-600: hsl(210, 12%, 40%); /* medium-dark gray */
   --tw-gray-700: hsl(210, 16%, 28%); /* dark gray for text */
   --tw-gray-800: hsl(210, 20%, 17%); /* very dark gray */
   --tw-gray-900: hsl(210, 24%, 10%); /* charcoal */
-  --tw-gray-950: hsl(210, 28%, 5%);  /* nearly black */
-  
+  --tw-gray-950: hsl(210, 28%, 5%); /* nearly black */
+
   /* Success/Error States */
   --tw-green-600: hsl(160, 84%, 39%); /* success */
-  --tw-red-600: hsl(0, 84%, 50%);     /* error */
-  
+  --tw-red-600: hsl(0, 84%, 50%); /* error */
+
   /* Functional Color Assignments */
   --color-background: var(--tw-white);
   --color-text: var(--tw-gray-900);
@@ -45,63 +45,69 @@
   --color-focus: var(--tw-blue-500);
   --color-success: var(--tw-green-600);
   --color-error: var(--tw-red-600);
-  
+
   /* Syntax Highlighting Colors */
-  --sh-class: hsl(220, 85%, 45%);    /* blue */
+  --sh-class: hsl(220, 85%, 45%); /* blue */
   --sh-identifier: hsl(210, 15%, 17%); /* dark gray */
-  --sh-sign: hsl(210, 10%, 40%);     /* medium gray */
-  --sh-string: hsl(160, 65%, 25%);   /* green */
-  --sh-keyword: hsl(0, 75%, 42%);    /* red */
-  --sh-comment: hsl(210, 9%, 45%);   /* medium gray */
+  --sh-sign: hsl(210, 10%, 40%); /* medium gray */
+  --sh-string: hsl(160, 65%, 25%); /* green */
+  --sh-keyword: hsl(0, 75%, 42%); /* red */
+  --sh-comment: hsl(210, 9%, 45%); /* medium gray */
   --sh-jsxliterals: hsl(250, 75%, 60%); /* indigo */
-  --sh-property: hsl(30, 75%, 40%);  /* amber */
-  --sh-entity: hsl(30, 75%, 40%);    /* amber */
-  
+  --sh-property: hsl(30, 75%, 40%); /* amber */
+  --sh-entity: hsl(30, 75%, 40%); /* amber */
+
   /* Spacing - Using a consistent scale with clear naming */
   --space-3xs: 0.125rem; /* 2px */
-  --space-2xs: 0.25rem;  /* 4px */
-  --space-xs: 0.5rem;    /* 8px */
-  --space-sm: 0.75rem;   /* 12px */
-  --space-md: 1rem;      /* 16px */
-  --space-lg: 1.5rem;    /* 24px */
-  --space-xl: 2rem;      /* 32px */
-  --space-2xl: 3rem;     /* 48px */
-  --space-3xl: 4rem;     /* 64px */
-  
+  --space-2xs: 0.25rem; /* 4px */
+  --space-xs: 0.5rem; /* 8px */
+  --space-sm: 0.75rem; /* 12px */
+  --space-md: 1rem; /* 16px */
+  --space-lg: 1.5rem; /* 24px */
+  --space-xl: 2rem; /* 32px */
+  --space-2xl: 3rem; /* 48px */
+  --space-3xl: 4rem; /* 64px */
+
   /* Border Radius - Consistent scaling */
   --radius-sm: 0.125rem; /* 2px */
   --radius-md: 0.375rem; /* 6px */
-  --radius-lg: 0.5rem;   /* 8px */
-  --radius-xl: 0.75rem;  /* 12px */
-  --radius-2xl: 1rem;    /* 16px */
+  --radius-lg: 0.5rem; /* 8px */
+  --radius-xl: 0.75rem; /* 12px */
+  --radius-2xl: 1rem; /* 16px */
   --radius-full: 9999px;
-  
+
   /* Typography */
-  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
-  --font-size-xs: 0.75rem;   /* 12px */
-  --font-size-sm: 0.875rem;  /* 14px */
-  --font-size-md: 1rem;      /* 16px */
-  --font-size-lg: 1.125rem;  /* 18px */
-  --font-size-xl: 1.25rem;   /* 20px */
-  --font-size-2xl: 1.5rem;   /* 24px */
+  --font-sans:
+    system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  --font-mono:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+  --font-size-xs: 0.75rem; /* 12px */
+  --font-size-sm: 0.875rem; /* 14px */
+  --font-size-md: 1rem; /* 16px */
+  --font-size-lg: 1.125rem; /* 18px */
+  --font-size-xl: 1.25rem; /* 20px */
+  --font-size-2xl: 1.5rem; /* 24px */
   --font-size-3xl: 1.875rem; /* 30px */
-  --font-size-4xl: 2.25rem;  /* 36px */
-  
+  --font-size-4xl: 2.25rem; /* 36px */
+
   /* Line Heights */
   --line-height-tight: 1.25;
   --line-height-normal: 1.5;
   --line-height-relaxed: 1.75;
-  
+
   /* Transitions - Consistent easing */
   --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-default: 300ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
-  
+
   /* Shadows - Enhanced depth perception */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --shadow-md:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --shadow-lg:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
   --shadow-focus: 0 0 0 3px rgba(49, 120, 246, 0.25);
 
   /* Modern Color Theme using OKLCH */
@@ -130,7 +136,7 @@
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
   --radius: 0.625rem;
-  
+
   /* Sidebar specific theme */
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
@@ -168,7 +174,7 @@
   --chart-3: oklch(0.769 0.188 70.08);
   --chart-4: oklch(0.627 0.265 303.9);
   --chart-5: oklch(0.645 0.246 16.439);
-  
+
   /* Dark mode sidebar theme */
   --sidebar: oklch(0.205 0 0);
   --sidebar-foreground: oklch(0.985 0 0);
@@ -178,7 +184,7 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(0.269 0 0);
   --sidebar-ring: oklch(0.439 0 0);
-  
+
   /* Dark mode overrides for functional colors */
   --color-background: var(--tw-gray-900);
   --color-text: var(--tw-gray-100);
@@ -188,7 +194,7 @@
   --color-link-hover: var(--tw-blue-300);
   --color-border: var(--tw-gray-700);
   --color-focus: var(--tw-blue-400);
-  
+
   /* Dark mode syntax highlighting */
   --sh-class: hsl(220, 85%, 65%);
   --sh-identifier: hsl(210, 15%, 80%);
@@ -199,8 +205,6 @@
   --sh-jsxliterals: hsl(250, 75%, 75%);
   --sh-property: hsl(30, 75%, 60%);
   --sh-entity: hsl(30, 75%, 60%);
-
-  
 }
 
 @theme inline {
@@ -249,13 +253,13 @@
     padding: 0;
     box-sizing: border-box;
   }
-  
+
   html {
     height: 100%;
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
   }
-  
+
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-sans);
@@ -266,7 +270,6 @@
     -moz-osx-font-smoothing: grayscale;
   }
 }
-
 
 ::selection {
   background-color: var(--blue-700);
@@ -363,7 +366,7 @@
 }
 
 .prose .anchor:after {
-  content: '#';
+  content: "#";
   color: var(--color-text-secondary);
 }
 
@@ -475,11 +478,11 @@ table td {
 }
 
 /* ---------- Form Elements ---------- */
-input[type='text'],
-input[type='email'],
-input[type='password'],
-input[type='search'],
-input[type='number'],
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
 textarea,
 select {
   -webkit-appearance: none;
@@ -536,11 +539,11 @@ select:focus {
   .prose h1 {
     font-size: 1.75rem;
   }
-  
+
   .prose h2 {
     font-size: 1.375rem;
   }
-  
+
   .prose h3 {
     font-size: 1.25rem;
   }
@@ -549,4 +552,3 @@ select:focus {
     font-size: 1.125rem;
   }
 }
-

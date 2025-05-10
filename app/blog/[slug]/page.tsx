@@ -1,23 +1,27 @@
-import { notFound } from 'next/navigation'
-import { CustomMDX } from 'app/components/mdx'
-import { formatDate, getBlogPosts } from 'app/blog/utils'
-import { baseUrl } from 'app/sitemap'
+import { notFound } from "next/navigation";
+import { CustomMDX } from "app/components/mdx";
+import { formatDate, getBlogPosts } from "app/blog/utils";
+import { baseUrl } from "app/sitemap";
 
 export async function generateStaticParams() {
-  let posts = await getBlogPosts()
+  let posts = await getBlogPosts();
 
   return posts.map((post) => ({
     slug: post.slug,
-  }))
+  }));
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const { slug } = await params
-  let posts = await getBlogPosts()
-  let post = posts.find((post) => post.slug === slug)
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const { slug } = await params;
+  let posts = await getBlogPosts();
+  let post = posts.find((post) => post.slug === slug);
 
   if (!post) {
-    return
+    return;
   }
 
   let {
@@ -25,10 +29,10 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     publishedAt: publishedTime,
     summary: description,
     image,
-  } = post.metadata
+  } = post.metadata;
   let ogImage = image
     ? image
-    : `${baseUrl}/og?title=${encodeURIComponent(title)}`
+    : `${baseUrl}/og?title=${encodeURIComponent(title)}`;
 
   return {
     title,
@@ -36,7 +40,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     openGraph: {
       title,
       description,
-      type: 'article',
+      type: "article",
       publishedTime,
       url: `${baseUrl}/blog/${post.slug}`,
       images: [
@@ -46,21 +50,21 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       ],
     },
     twitter: {
-      card: 'summary_large_image',
+      card: "summary_large_image",
       title,
       description,
       images: [ogImage],
     },
-  }
+  };
 }
 
 export default async function Blog({ params }: { params: { slug: string } }) {
-  const { slug } = await params
-  let posts = await getBlogPosts()
-  let post = posts.find((post) => post.slug === slug)
+  const { slug } = params;
+  let posts = await getBlogPosts();
+  let post = posts.find((post) => post.slug === slug);
 
   if (!post) {
-    notFound()
+    notFound();
   }
 
   return (
@@ -70,8 +74,8 @@ export default async function Blog({ params }: { params: { slug: string } }) {
         suppressHydrationWarning
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'BlogPosting',
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
             headline: post.metadata.title,
             datePublished: post.metadata.publishedAt,
             dateModified: post.metadata.publishedAt,
@@ -81,8 +85,8 @@ export default async function Blog({ params }: { params: { slug: string } }) {
               : `/og?title=${encodeURIComponent(post.metadata.title)}`,
             url: `${baseUrl}/blog/${post.slug}`,
             author: {
-              '@type': 'Person',
-              name: 'Ramon Xavier',
+              "@type": "Person",
+              name: "Ramon Xavier",
             },
           }),
         }}
@@ -99,5 +103,5 @@ export default async function Blog({ params }: { params: { slug: string } }) {
         <CustomMDX source={post.content} />
       </article>
     </section>
-  )
+  );
 }
